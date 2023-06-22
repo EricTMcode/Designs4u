@@ -20,7 +20,9 @@ struct ContentView: View {
                 }
                 .padding(.horizontal)
             }
-            .searchable(text: $model.searchText)
+            .searchable(text: $model.searchText, tokens: $model.tokens, suggestedTokens: model.suggestedTokens, prompt: Text("Search, or use # to select skills")) { token in
+                Text(token.id)
+            }
             .navigationTitle("Design4u")
         }
         .task {
