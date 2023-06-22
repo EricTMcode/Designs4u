@@ -14,12 +14,13 @@ struct ContentView: View {
         NavigationStack {
             ScrollView {
                 LazyVStack {
-                    ForEach(model.people) { person in
+                    ForEach(model.searchResults) { person in
                         DesignerRow(person: person, model: model)
                     }
                 }
                 .padding(.horizontal)
             }
+            .searchable(text: $model.searchText)
             .navigationTitle("Design4u")
         }
         .task {
