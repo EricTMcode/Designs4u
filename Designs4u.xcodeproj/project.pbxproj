@@ -14,6 +14,7 @@
 		07A8B7E12A4328E800436696 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8B7E02A4328E800436696 /* Person.swift */; };
 		07A8B7E32A447C7900436696 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8B7E22A447C7900436696 /* DataModel.swift */; };
 		07A8B7E62A447E3D00436696 /* DesignerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8B7E52A447E3D00436696 /* DesignerRow.swift */; };
+		07A8B7E82A448CF000436696 /* DesignerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8B7E72A448CF000436696 /* DesignerDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		07A8B7E02A4328E800436696 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		07A8B7E22A447C7900436696 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		07A8B7E52A447E3D00436696 /* DesignerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignerRow.swift; sourceTree = "<group>"; };
+		07A8B7E72A448CF000436696 /* DesignerDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignerDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				07A8B7D32A4328CC00436696 /* ContentView.swift */,
+				07A8B7E72A448CF000436696 /* DesignerDetails.swift */,
 				07A8B7E52A447E3D00436696 /* DesignerRow.swift */,
 			);
 			path = Views;
@@ -165,6 +168,7 @@
 				07A8B7E12A4328E800436696 /* Person.swift in Sources */,
 				07A8B7E62A447E3D00436696 /* DesignerRow.swift in Sources */,
 				07A8B7E32A447C7900436696 /* DataModel.swift in Sources */,
+				07A8B7E82A448CF000436696 /* DesignerDetails.swift in Sources */,
 				07A8B7D42A4328CC00436696 /* ContentView.swift in Sources */,
 				07A8B7D22A4328CC00436696 /* Designs4uApp.swift in Sources */,
 			);
