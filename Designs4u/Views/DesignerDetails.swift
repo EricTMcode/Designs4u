@@ -23,14 +23,40 @@ struct DesignerDetails: View {
                 VStack(alignment: .leading, spacing: 10) {
                     Text(person.displayName)
                         .font(.largeTitle.bold())
+                        .fontDesign(.rounded)
                     
                     Text(person.bio)
                     Text(person.details)
                 }
                 .padding()
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(person.tags, id: \.self) { tag in
+                            Text(tag)
+                                .padding(5)
+                                .padding(.horizontal)
+                                .background(.blue.gradient)
+                                .foregroundColor(.white)
+                                .clipShape(Capsule())
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+                .mask(
+                    LinearGradient(stops: [.init(color: .clear, location: 0), .init(color: .white, location: 0.05), .init(color: .white, location: 0.95), .init(color: .clear, location: 1)], startPoint: .leading, endPoint: .trailing)
+                )
+                
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("**Experience:** ^[\(person.experience) years](inflect: true)")
+                    Text("**Rate:** $\(person.rate)")
+                    Text(.init("**Contact:** \(person.email)"))
+                }
+                .padding()
             }
             .padding(.vertical)
         }
+        .presentationDetents([.medium, .large])
     }
 }
 

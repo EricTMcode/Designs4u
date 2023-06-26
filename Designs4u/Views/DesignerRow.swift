@@ -13,6 +13,8 @@ struct DesignerRow: View {
     @ObservedObject var model: DataModel
     var namespace: Namespace.ID
     
+    @Binding var selectedDesigner: Person?
+    
     var body: some View {
         HStack {
             Button {
@@ -42,7 +44,7 @@ struct DesignerRow: View {
             Spacer()
             
             Button {
-                
+                selectedDesigner = person
             } label: {
                 Image(systemName: "info.circle")
             }
@@ -55,6 +57,6 @@ struct DesignerRow_Previews: PreviewProvider {
     @Namespace static var namespace
     
     static var previews: some View {
-        DesignerRow(person: .example, model: DataModel(), namespace: namespace)
+        DesignerRow(person: .example, model: DataModel(), namespace: namespace, selectedDesigner: .constant(nil))
     }
 }

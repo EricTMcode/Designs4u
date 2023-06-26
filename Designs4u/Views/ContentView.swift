@@ -11,12 +11,14 @@ struct ContentView: View {
     @StateObject private var model = DataModel()
     @Namespace var namespace
     
+    @State private var selectedDesigner: Person?
+    
     var body: some View {
         NavigationStack {
             ScrollView {
                 LazyVStack {
                     ForEach(model.searchResults) { person in
-                        DesignerRow(person: person, model: model, namespace: namespace)
+                        DesignerRow(person: person, model: model, namespace: namespace, selectedDesigner: $selectedDesigner)
                     }
                 }
                 .padding(.horizontal)
@@ -25,6 +27,7 @@ struct ContentView: View {
             .searchable(text: $model.searchText, tokens: $model.tokens, suggestedTokens: model.suggestedTokens, prompt: Text("Search, or use # to select skills")) { token in
                 Text(token.id)
             }
+            .sheet(item: $selectedDesigner, content: DesignerDetails.init)
             .safeAreaInset(edge: .bottom) {
                 if model.selected.isEmpty == false {
                     VStack {
